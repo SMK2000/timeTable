@@ -8,7 +8,7 @@ var express = require("express"),
 //==============
 //MONGOOSE CONFIG
 //==============
-var uri = "mongodb+srv://flux:hesoyam@cluster0-3z3hj.mongodb.net/test?retryWrites=true&w=majority"
+var uri = process.env.DATABASEURI || "mongodb+srv://flux:hesoyam@cluster0-3z3hj.mongodb.net/test?retryWrites=true&w=majority"
 mongoose.connect(uri,{
 	useNewUrlParser:true,
 	useCreateIndex:true,
@@ -42,7 +42,6 @@ app.post('/',function(req,res){
 	Registration.find({"id":idnumber},function(err,foundObj){
 		if(err){ console.log(err);
 		} else {
-			console.log(foundObj);
 			res.render("index",{foundArr:foundObj})
 		}
 	})
