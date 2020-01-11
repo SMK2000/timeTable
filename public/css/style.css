@@ -18,10 +18,15 @@ img {
     width: 170px;
     height: 200px;
 }
-@media screen and (max-width:480px){
+@media screen and (max-width:768px){
     img.hidden {
         width: 0 !important;
         height: 0 !important;
         display: none !important;
+    }
+}
+@media screen and (max-width:480px){
+    div.cardspacing{
+        width: 100% !important;
     }
 }
