@@ -1,8 +1,16 @@
-body{
-    background: #556270;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #FF6B6B, #556270);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #FF6B6B, #556270); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */    
+body.bg-1{
+    margin:0px auto 0px auto;
+    background: #BBD2C5;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #292E49, #BBD2C5, #536976) ;  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #292E49,#BBD2C5, #536976) ; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
+body.bg-2{
+    background: #556270; 
+    background: -webkit-linear-gradient(to right,  #BBD2C5, #536976);
+    background: linear-gradient(to right,  #BBD2C5, #536976);
+
+}
+
 form{
     text-align: center;
     align-self: center;
@@ -29,6 +37,14 @@ img {
     width: 170px;
     height: 200px;
 }
+.mainheading{
+        text-align: center;
+        margin-top: 7em !important;
+        font-weight: 500px;
+        color: white;
+        font-family: "tablet-gothic-condensed", "arial narrow", arial, verdana, sans-serif;
+
+}
 @media screen and (max-width:768px){
     img.hidden {
         width: 0 !important;
@@ -48,4 +64,7 @@ img {
     form{
         width: auto;
     }
+}
+@media screen and (min-width: 550px){
+
 }
