@@ -3,7 +3,18 @@ body{
     background: -webkit-linear-gradient(to right, #FF6B6B, #556270);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #FF6B6B, #556270); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */    
 }
-
+form{
+    text-align: center;
+    align-self: center;
+    margin-top: 10%;
+    margin-right: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    width: 40%;
+}
+button{
+    margin-top: 1em!important ;
+}
 .examspacing{
     margin: 4% auto 4% auto;
 }
@@ -26,7 +37,15 @@ img {
     }
 }
 @media screen and (max-width:480px){
-    div.cardspacing{
+    div.ui.card{
         width: 100% !important;
+        margin: 2% 2% 2% 2% !important;
+        display: inline-block !important;
+    }
+    .cardspacing{
+        margin:0em 0em 0em 0em;
+    }
+    form{
+        width: auto;
     }
 }

@@ -19,7 +19,7 @@
             <%    for(var i=0;(i<3 && j<mid.length);i++,j++){ %>
                 <div class="ui card">
                     <div class="content">
-                    <div class="header"><%= mid[j].courseid %></div>
+                    <div class="header"><%= mid[j].courseid %><span class="float-right"> <%=mid[j].section %></span></div>
                     <div class="meta"><%= mid[j].coursename %></div>
                     <div class="description">
                     <p><em><strong><%= mid[j].midsemdate %></strong></em></p>
@@ -40,7 +40,7 @@
             <%    for(var i=0;(i<3 && j<com.length);i++,j++){ %>
                 <div class="ui card">
                     <div class="content">
-                    <div class="header"><%= com[j].courseid %></div>
+                    <div class="header"><%= com[j].courseid %><span class="float-right"> <%=com[j].section %></span></div>
                     <div class="meta"><%= com[j].coursename %></div>
                     <div class="description">
                     <p><em><strong><%= com[j].compredate %></strong></em></p>
