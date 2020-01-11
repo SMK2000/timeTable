@@ -1,4 +1,6 @@
 <%- include ('./partials/header') %>
+
+<% if(foundArr[0] && foundArr[0].name){ %>
 <div class="container examspacing">
     <div>
         <h1 class="text-left"><em><strong>Welcome <%= foundArr[0].name %>
@@ -51,7 +53,12 @@
         <% } %>
     </div>
 </div>
-
+<% } else if(foundArr) { %>
+    <h1 class="text-center"><em><strong>Its so Lonely Here!!!<br>
+        Did you enter your ID correctly<br>
+    <a href="javascript:history.back()">Go Back</a>
+    </strong></em></h1>   
+    <% } %>
 <!-- here is function for sorting by date -->
 
 <%

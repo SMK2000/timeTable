@@ -42,6 +42,7 @@ app.post('/',function(req,res){
 	Registration.find({"id":idnumber},function(err,foundObj){
 		if(err){ console.log(err);
 		} else {
+			console.log(foundObj);
 			res.render("index",{foundArr:foundObj})
 		}
 	})
