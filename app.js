@@ -24,7 +24,7 @@ mongoose.connect(uri,{
 
 app.set("view engine","ejs");
 //setting view engine to ejs
-app.use(express.static('public'));
+app.use(express.static(__dirname + '/public'));
 //serving custom css
 app.use(bodyParser.urlencoded({extended:true}));
 //using bodyparser so recieve req object
@@ -47,9 +47,9 @@ app.post('/',function(req,res){
 	})
 
 });
-//==============
+//=================
 //PORT on which service starts
-//==============
+//==================
 
 var port = process.env.PORT || 31000
 app.listen(port, process.env.IP,function(){
