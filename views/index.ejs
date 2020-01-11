@@ -1,8 +1,77 @@
 <%- include ('./partials/header') %>
+<div class="container examspacing">
+    <div>
+        <h1 class="text-left"><em><strong>Welcome <%= foundArr[0].name %>
+            <span>
+                <img class="float-right float-top hidden" src="https://swd.bits-goa.ac.in/css/studentImg/<%= foundArr[0].id.substring(0,12) %>.jpg" >
+            </span>
+        </strong></em></h1>
 
-<% for (var i =0; i <=foundArr.length;  i++ ) { %>
-    <br/> 
-    <%= JSON.stringify(foundArr[i]) %>
-    <% } %>
+        </div>
+    <em><h2 class="space">Mid-Sem Schedule</h2></em>
+    <!-- midsem timeTable -->
+    <% var mid = foundArr.sort(mcompare); %>
+    <div class="row examspacing">
+        <% for(var j=0;j<mid.length;){ %>
+            <div col-sm class="cardspacing">
+            <%    for(var i=0;(i<3 && j<mid.length);i++,j++){ %>
+                <div class="ui card">
+                    <div class="content">
+                    <div class="header"><%= mid[j].courseid %></div>
+                    <div class="meta"><%= mid[j].coursename %></div>
+                    <div class="description">
+                    <p><em><strong><%= mid[j].midsemdate %></strong></em></p>
+                    <p><%= mid[j].midsemtime %></p>
+                        </div>
+                    </div>
+                </div>
+        <%    } %>
+            </div>
+        <% } %>
+    </div>
+    <em><h2>Compre Schedule</h2></em>
+    <% var com = foundArr.sort(ccompare); %>
+    <!-- compre-timeTable     -->
+    <div class="row examspacing">
+        <% for(var j=0;j<com.length;){ %>
+            <div col-sm class="cardspacing">
+            <%    for(var i=0;(i<3 && j<com.length);i++,j++){ %>
+                <div class="ui card">
+                    <div class="content">
+                    <div class="header"><%= com[j].courseid %></div>
+                    <div class="meta"><%= com[j].coursename %></div>
+                    <div class="description">
+                    <p><em><strong><%= com[j].compredate %></strong></em></p>
+                    <p><%= com[j].compretime %></p>
+                        </div>
+                    </div>
+                </div>
+        <%    } %>
+            </div>
+        <% } %>
+    </div>
+</div>
 
+<!-- here is function for sorting by date -->
+
+<%
+function mcompare( a, b ) {
+    if ( a.midsemdate < b.midsemdate ){
+      return -1;
+    }
+    if ( a.midsemdate > b.midsemdate ){
+      return 1;
+    }
+    return 0;
+  }
+  function ccompare( a, b ) {
+    if ( a.compredate < b.compredate ){
+      return -1;
+    }
+    if ( a.compredate > b.compredate ){
+      return 1;
+    }
+    return 0;
+  }
+%>
 <%- include ('./partials/footer') %>

@@ -3,3 +3,25 @@ body{
     background: -webkit-linear-gradient(to right, #FF6B6B, #556270);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #FF6B6B, #556270); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */    
 }
+
+.examspacing{
+    margin: 4% auto 4% auto;
+}
+.cardspacing{
+    margin: 1% 2% 1% 2%;
+}
+.space{
+    margin-top: 10% !important;
+}
+img {
+    border-radius: 50%;
+    width: 170px;
+    height: 200px;
+}
+@media screen and (max-width:480px){
+    img.hidden {
+        width: 0 !important;
+        height: 0 !important;
+        display: none !important;
+    }
+}
