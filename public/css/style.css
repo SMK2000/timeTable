@@ -92,8 +92,6 @@ footer{
     }
   }
 }
-  }
-
 @-webkit-keyframes hue {
     from {
       -webkit-filter: hue-rotate(0deg);
@@ -138,6 +136,7 @@ footer{
     .mainheading{
         font-size: 50px;
     }
+
 }
 @media screen and (min-width: 550px){
 
