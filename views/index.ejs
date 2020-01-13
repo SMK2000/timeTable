@@ -11,11 +11,12 @@
 
         </div>
     <em><h2 class="space">Mid-Sem Schedule</h2></em>
-    <!-- midsem timeTable -->
     <% var mid = foundArr.sort(mcompare); %>
-    <div class="row examspacing">
+    <br><br>
+    <!-- midsem timeTable -->
+    <div class="cardspacing">
         <% for(var j=0;j<mid.length;){ %>
-            <div class="col-sm cardspacing">
+            <div class="ui cards">
             <%    for(var i=0;(i<3 && j<mid.length);i++,j++){ %>
                 <div class="ui card">
                     <div class="content">
@@ -31,12 +32,16 @@
             </div>
         <% } %>
     </div>
+    <br><br>
+
+
     <em><h2>Compre Schedule</h2></em>
     <% var com = foundArr.sort(ccompare); %>
+    <br><br>
     <!-- compre-timeTable     -->
-    <div class="row examspacing">
+    <div class="cardspacing">
         <% for(var j=0;j<com.length;){ %>
-            <div class="col-sm cardspacing">
+            <div class="ui cards">
             <%    for(var i=0;(i<3 && j<com.length);i++,j++){ %>
                 <div class="ui card">
                     <div class="content">
@@ -71,7 +76,7 @@ function mcompare( a, b ) {
     }
     return 0;
   }
-  function ccompare( a, b ) {
+function ccompare( a, b ) {
     if ( a.compredate < b.compredate ){
       return -1;
     }
