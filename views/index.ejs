@@ -3,9 +3,9 @@
 <% if(foundArr[0] && foundArr[0].name){ %>
 <div class="container examspacing">
     <div>
-        <h1 class="text-left"><em><strong>Welcome <%= foundArr[0].name %>
+        <h1 class="text-left"><em><strong>Welcome, <%= titleCase(foundArr[0].name) %>!
             <span>
-                <img class="float-right float-top hidden" src="https://swd.bits-goa.ac.in/css/studentImg/<%= foundArr[0].id.substring(0,12) %>.jpg" >
+                <img class="float-right float-top hidden zoom" src="https://swd.bits-goa.ac.in/css/studentImg/<%= foundArr[0].id.substring(0,12) %>.jpg" >
             </span>
         </strong></em></h1>
 
@@ -18,7 +18,7 @@
         <% for(var j=0;j<mid.length;){ %>
             <div class="ui cards">
             <%    for(var i=0;(i<3 && j<mid.length);i++,j++){ %>
-                <div class="ui card">
+                <div class="ui card zoom" onmouseover="bigImg(this)" onmouseout="normalImg(this)">
                     <div class="content">
                     <div class="header"><%= mid[j].courseid %><span class="float-right"> <%=mid[j].section %></span></div>
                     <div class="meta"><%= mid[j].coursename %></div>
@@ -43,7 +43,7 @@
         <% for(var j=0;j<com.length;){ %>
             <div class="ui cards">
             <%    for(var i=0;(i<3 && j<com.length);i++,j++){ %>
-                <div class="ui card">
+                <div class="ui card zoom" onmouseover="bigImg(this)" onmouseout="normalImg(this)">
                     <div class="content">
                     <div class="header"><%= com[j].courseid %><span class="float-right"> <%=com[j].section %></span></div>
                     <div class="meta"><%= com[j].coursename %></div>
@@ -58,19 +58,24 @@
         <% } %>
     </div>
     <form action="/" method="get"><button class="fluid ui button mt-4">Check Another ID</button></form>
+        <form action="https://forms.gle/fxgwEGmv19vR9jwUA">
+            <button class="fluid ui button mt-0 mb-0" href="https://forms.gle/fxgwEGmv19vR9jwUA">Report Wrong Data</button>
+        </form>
 </div>
 
 
 <% } else { if(foundArr) { %>
     <h1 class="text-center mt-5"><em><strong>Its so Lonely Here!!!<br>
-        Did you enter your ID correctly<br>
-    <a href="javascript:history.back()">Go Back</a>
+                Did you enter your ID correctly<br>
+        <a href="javascript:history.back()">Go Back</a>
+        <form action="/" method="get"><button class="fluid ui button mt-4">Report Wrong Data</button></form>
+    
     </strong></em></h1>   
     <% } else { %>
         <h1 class="text-center mt-5"><em><strong>Thats Wierd! Did you tampered with request!<br>
             Database didn't return object can you return feedback to me!<br>
         <a href="javascript:history.back()">Go Back</a>
-        <a href="mailto:f20180319@goa.bits-pilani.ac.in">Report Please</a>
+        <form action="/" method="get"><button class="fluid ui button mt-4">Check Another ID</button></form>
         </strong></em></h1>
 <% } }%>
 <!-- here is function for sorting by date -->
@@ -94,5 +99,12 @@ function ccompare( a, b ) {
     }
     return 0;
   }
+function titleCase(str) {
+    var splitStr = str.toLowerCase().split(' ');
+    for (var i = 0; i < splitStr.length; i++) {
+        splitStr[i] = splitStr[i].charAt(0).toUpperCase() + splitStr[i].substring(1);     
+    }
+    return splitStr.join(' '); 
+ }
 %>
 <%- include ('./partials/footer') %>
