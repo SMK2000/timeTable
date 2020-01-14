@@ -9,3 +9,8 @@ function bigImg(x) {
   }
 
 
+function sumbit_functions() {
+  var str = document.getElementById("detail").value;
+  var str1 = str.toUpperCase();
+  document.getElementById("detail").value = str1;
+}

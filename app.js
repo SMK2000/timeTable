@@ -8,7 +8,7 @@ var express = require("express"),
 //==============
 //MONGOOSE CONFIG
 //==============
-var uri = process.env.DATABASEURI ||"mongodb://localhost:27017/test" 
+var uri = process.env.DATABASEURI || "mongodb://localhost:27017/test" 
 mongoose.connect(uri,{
 	useNewUrlParser:true,
 	useCreateIndex:true,
