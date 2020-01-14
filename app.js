@@ -8,7 +8,7 @@ var express = require("express"),
 //==============
 //MONGOOSE CONFIG
 //==============
-var uri = process.env.DATABASEURI || "mongodb+srv://flux:hesoyam@cluster0-3z3hj.mongodb.net/test?retryWrites=true&w=majority"
+var uri = process.env.DATABASEURI
 mongoose.connect(uri,{
 	useNewUrlParser:true,
 	useCreateIndex:true,
