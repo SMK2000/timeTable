@@ -1,4 +1,4 @@
-# nodejs-blog
+# time-Table WebApp
 
 This repository contains a TimeTable WebApp. Developed using Nodejs,Semantic UI,Bootsrap and MongoDB.<br>
 This is a Study Project.<br>
