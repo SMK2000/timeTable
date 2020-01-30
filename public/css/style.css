@@ -68,6 +68,7 @@ footer{
     -ms-transform: scale(1..05); /* IE 9 */
     -webkit-transform: scale(1.05); /* Safari 3-8 */
     transform: scale(1.05);
+    border: 1px solid black;
   }
   .bg-info{
       background-color: lightsteelblue !important;
